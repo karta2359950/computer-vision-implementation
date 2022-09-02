@@ -9,12 +9,12 @@ Im = double(Im);
 % subplot(121);imshow(uint8(Im));title('original image');
 % subplot(122);imhist(uint8(Im));title('original image hist');
 
-% ¨ú/3ªº¥|±Ë¤­¤J»P­pºâ1-256ªºpdf
+% å–/3çš„å››æ¨äº”å…¥èˆ‡è¨ˆç®—1-256çš„pdf
 pdf = zeros(1,256);
 for i = 1:R
     for j = 1:C
-        Im(i,j) = round(Im(i,j)/3);%¥|±Ë¤­¤J
-        pdf(Im(i,j)+1) = pdf(Im(i,j)+1) + 1;%¦Ç¶¥­È0©ñ¤Jindex1ªº®æ¤l¸Ì
+        Im(i,j) = round(Im(i,j)/3);%å››æ¨äº”å…¥
+        pdf(Im(i,j)+1) = pdf(Im(i,j)+1) + 1;%ç°éšŽå€¼0æ”¾å…¥index1çš„æ ¼å­è£¡
     end
 end
 
@@ -25,7 +25,7 @@ subplot(122);imhist(uint8(Im));title('1/3original image hist');
 %cdf  
 cdf = cumsum(pdf);
 
-%¦Ç¶¥­ÈÂà´«
+%ç°éšŽå€¼è½‰æ›
 trans = zeros(1,256);
 for i = 1:256
     trans(i) = round(((cdf(i) - min(cdf(cdf>0)))/(max(cdf) - min(cdf(cdf>0))))*255);
