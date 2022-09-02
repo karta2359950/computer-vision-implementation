@@ -17,18 +17,18 @@ end
 cnt = zeros(1,256);
 for i=1:R
     for j=1:C
-        %¦Ç¶¥­È0©ñ¤Jindex1ªº®æ¤l¸Ì
+        %ç°éšå€¼0æ”¾å…¥index1çš„æ ¼å­è£¡
         cnt(Im(i,j)+1) = cnt(Im(i,j)+1) + 1;
     end
 end
 %bar(cnt)  (b)
 
-L = bwareaopen(output1, 500, 8);%¥h°£500¥H¤U°Ï°ì
-[L, n] = mybwlabel(L);%§ä³s³q¹Ï
+L = bwareaopen(output1, 500, 8);%å»é™¤500ä»¥ä¸‹å€åŸŸ
+[L, n] = mybwlabel(L);%æ‰¾é€£é€šåœ–
 
-stats = regionprops(L);%¦L¥Xcentroid and bounding box
+stats = regionprops(L);%å°å‡ºcentroid and bounding box
 
-%¿é¥Xbox»Pcentroid
+%è¼¸å‡ºboxèˆ‡centroid
 imshow(L);hold on;%  (c)
  for i = 1 : n
   tempBound = stats(i).BoundingBox;
