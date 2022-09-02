@@ -17,9 +17,9 @@ output2 = zeros(size(Im));
   
 for i=ceil(r/2):R-floor(r/2)
     for j=ceil(c/2):C-floor(c/2)
-        %¨ú5x5½d³ò
+        %å–5x5ç¯„åœ
         neighors=Im(i-floor(r/2):i+floor(r/2), j-floor(c/2):j+floor(c/2));  
-        %¨úkernal¦³1ªºindex
+        %å–kernalæœ‰1çš„index
         select=neighors(logical(mask));
         %dilation
         output1(i, j)=max(select(:)); 
@@ -37,10 +37,10 @@ output4 = zeros(size(Im));
 
 for i=ceil(r/2):R-floor(r/2)
     for j=ceil(c/2):C-floor(c/2)
-        %¨ú5x5½d³ò
+        %å–5x5ç¯„åœ
         neighors_b=output2(i-floor(r/2):i+floor(r/2), j-floor(c/2):j+floor(c/2)); 
         neighors_a=output1(i-floor(r/2):i+floor(r/2), j-floor(c/2):j+floor(c/2));  
-        %¨úkernal¦³1ªºindex
+        %å–kernalæœ‰1çš„index
         select_b=neighors_b(logical(mask));
         select_a=neighors_a(logical(mask));
         %opening
